@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Elsie|Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 960px;
+  margin: 0 auto;
+}
+
+

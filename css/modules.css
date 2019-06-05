@@ -1,0 +1,16 @@
+h1, h2 {
+  font-family: 'Elsie', cursive;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}

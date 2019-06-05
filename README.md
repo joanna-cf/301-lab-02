@@ -2,6 +2,9 @@
 
 This page displays an amusing gallery of horned creatures. 
 
+Partnered with Paula Cruz.
+-------
+
 Number and name of feature: Feature 1 - Display images
 
 Estimate of time needed to complete: 1 hour
@@ -26,12 +29,12 @@ Actual time needed to complete: 2 hours 53 minutes
 
 -------
 
-Number and name of feature: Feature 3 -
+Number and name of feature: Feature 3 - STyle the application
 
-Estimate of time needed to complete: 
+Estimate of time needed to complete: 1 hour
 
-Start time: 
+Start time: 12:10pm
 
-Finish time: 
+Finish time: 1:00pm
 
-Actual time needed to complete:
+Actual time needed to complete: 50 minutes

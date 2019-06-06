@@ -6,25 +6,32 @@ function startApp(){
 
 //Function to get data from json files
 function getData(){
-  const success = horns => {
-    console.log('success');
+  const success1 = horns => {
+    console.log(horns);
     displayPage(horns);
     addDropDownOptions(horns);
   };
-  const failure = error => console.log(error);
+  const failure1 = error => console.log(error);
 
   //First json file
   $.get('data/page-1.json', 'json')
-    .then(success)
-    .catch(failure);
+    .then(success1)
+    .catch(failure1);
+
+  const success2 = horns2 => {
+    console.log(horns2);
+    displayPage(horns2);
+    addDropDownOptions(horns2);
+  };
+  const failure2 = error => console.log(error);
 
   //Second json file
   $.get('data/page-2.json', 'json')
-    .then(success)
-    .catch(failure);
+    .then(success2)
+    .catch(failure2);
 }
 
-function displayPage(horns){
+function displayPage(horns, horns2){
   horns.forEach(element => {
     const $newHorn = $('#photo-template').clone();
 
@@ -37,6 +44,19 @@ function displayPage(horns){
     $('main').append($newHorn);
   });
   $('#photo-template').hide();
+
+  horns2.forEach(element => {
+    const $newHorn = $('#photo-template2').clone();
+
+    $newHorn.find('h2').text(element.title);
+    $newHorn.find('img').attr('src', element.image_url);
+    $newHorn.find('p').text(element.description);
+    $newHorn.attr('class', element.keyword);
+    $newHorn.removeAttr('id');
+
+    $('main').append($newHorn);
+  });
+  $('#photo-template2').hide();
 }
 
 function addDropDownOptions(horns){
@@ -104,10 +124,10 @@ function showCurrentPage(pageNum1){
   $('.page').hide();
 
   if(parseInt(pageNum1) === 1){
-    $('.page-1-stuff').show();
+    $('photo-template').show();
     console.log('page1stuff');
   } else {
-    $('.page-2-stuff').show();
+    $('photo-template2').show();
     console.log('page2stuff');
   }
 }

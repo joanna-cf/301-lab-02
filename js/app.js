@@ -1,4 +1,7 @@
 // Function to start the app and render the page
+let arr = [];
+let arr2 = [];
+
 function startApp(){
   getData();
   attachListeners();
@@ -7,9 +10,10 @@ function startApp(){
 //Function to get data from json files
 function getData(){
   const success1 = horns => {
-    console.log(horns);
-    displayPage(horns);
-    addDropDownOptions(horns);
+    horns.forEach(element => arr.push(element));
+    displayPage(arr);
+    addDropDownOptions(arr);
+    console.log('array',arr);
   };
   const failure1 = error => console.log(error);
 
@@ -19,9 +23,10 @@ function getData(){
     .catch(failure1);
 
   const success2 = horns2 => {
-    console.log(horns2);
-    displayPage(horns2);
-    addDropDownOptions(horns2);
+    horns2.forEach(element => arr2.push(element));
+    displayPage(arr2);
+    addDropDownOptions(arr2);
+    console.log('array2',arr2);
   };
   const failure2 = error => console.log(error);
 
@@ -29,9 +34,12 @@ function getData(){
   $.get('data/page-2.json', 'json')
     .then(success2)
     .catch(failure2);
+
+  giveClass(arr,arr2);
 }
 
-function displayPage(horns, horns2){
+function displayPage(horns){
+
   horns.forEach(element => {
     const $newHorn = $('#photo-template').clone();
 
@@ -45,18 +53,6 @@ function displayPage(horns, horns2){
   });
   $('#photo-template').hide();
 
-  horns2.forEach(element => {
-    const $newHorn = $('#photo-template2').clone();
-
-    $newHorn.find('h2').text(element.title);
-    $newHorn.find('img').attr('src', element.image_url);
-    $newHorn.find('p').text(element.description);
-    $newHorn.attr('class', element.keyword);
-    $newHorn.removeAttr('id');
-
-    $('main').append($newHorn);
-  });
-  $('#photo-template2').hide();
 }
 
 function addDropDownOptions(horns){
@@ -116,20 +112,26 @@ function attachListeners(){
   $('nav li').on('click', event => {
     const pageNum1 = $(event.target).attr('data-page');
     showCurrentPage(pageNum1);
-    console.log('clicking');
+    console.log('clicking', pageNum1);
   });
+}
+function giveClass(arr,arr2){
+  arr.forEach(element => element.attr('class', 'group1'));
+  arr2.forEach(element => element.attr('class', 'group2'));
 }
 
 function showCurrentPage(pageNum1){
-  $('.page').hide();
+  $('.group1').hide();
+ $
 
   if(parseInt(pageNum1) === 1){
-    $('photo-template').show();
+    $('.group1').show();
     console.log('page1stuff');
-  } else {
-    $('photo-template2').show();
+  } else { //fix this later
+    $('.group2').show();
     console.log('page2stuff');
   }
 }
 
 $(startApp);
+

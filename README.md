@@ -29,7 +29,7 @@ Actual time needed to complete: 2 hours 53 minutes
 
 -------
 
-Number and name of feature: Feature 3 - STyle the application
+Number and name of feature: Feature 3 - Style the application
 
 Estimate of time needed to complete: 1 hour
 
@@ -38,3 +38,51 @@ Start time: 12:10pm
 Finish time: 1:00pm
 
 Actual time needed to complete: 50 minutes
+
+-------
+
+Number and name of feature: Lab 3 Feature 1 - Pagination
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+-------
+
+Number and name of feature: Lab 3 Feature 2 - Templating
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+-------
+
+Number and name of feature: Lab 3 Feature 3 - Styling with Flexbox
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+-------
+
+Number and name of feature: Lab 3 Feature 4 - Sort the Images
+
+Estimate of time needed to complete: 
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 

@@ -4,11 +4,13 @@ let arr2 = [];
 
 function startApp(){
   getData();
+  // giveClass(arr, arr2);
   attachListeners();
 }
 
 //Function to get data from json files
 function getData(){
+  // debugger;
   const success1 = horns => {
     horns.forEach(element => arr.push(element));
     displayPage(arr);
@@ -35,12 +37,10 @@ function getData(){
     .then(success2)
     .catch(failure2);
 
-  giveClass(arr,arr2);
 }
 
-function displayPage(horns){
-
-  horns.forEach(element => {
+function displayPage(insertArray){
+  insertArray.forEach(element => {
     const $newHorn = $('#photo-template').clone();
 
     $newHorn.find('h2').text(element.title);
@@ -48,17 +48,21 @@ function displayPage(horns){
     $newHorn.find('p').text(element.description);
     $newHorn.attr('class', element.keyword);
     $newHorn.removeAttr('id');
-
+    if (insertArray === arr){
+      $newHorn.attr('class', 'group1');
+    } else if (insertArray === arr2){
+      $newHorn.attr('class', 'group2');
+    }
     $('main').append($newHorn);
   });
   $('#photo-template').hide();
 
 }
 
-function addDropDownOptions(horns){
+function addDropDownOptions(insertArray){
   let $keywordArray = [];
 
-  horns.forEach(element => {
+  insertArray.forEach(element => {
     if ($keywordArray.includes(element.keyword) === false){
       $keywordArray.push(element.keyword);
     }
@@ -110,21 +114,25 @@ function attachListeners(){
   });
 
   $('nav li').on('click', event => {
-    const pageNum1 = $(event.target).attr('data-page');
-    showCurrentPage(pageNum1);
-    console.log('clicking', pageNum1);
+    const pageNum = $(event.target).attr('data-page');
+    showCurrentPage(pageNum);
+    console.log('clicking', pageNum);
   });
 }
-function giveClass(arr,arr2){
-  arr.forEach(element => element.attr('class', 'group1'));
-  arr2.forEach(element => element.attr('class', 'group2'));
-}
 
-function showCurrentPage(pageNum1){
+// function giveClass(arr, arr2){
+//   // debugger;
+//   arr.forEach(element => element.attr('class', 'group1'));
+//   arr2.forEach(element => element.attr('class', 'group2'));
+// }
+
+function showCurrentPage(pageNum){
   $('.group1').hide();
- $
+  $('.group2').hide();
 
-  if(parseInt(pageNum1) === 1){
+//  $
+
+  if(parseInt(pageNum) === 1){
     $('.group1').show();
     console.log('page1stuff');
   } else { //fix this later

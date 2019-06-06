@@ -1,16 +1,25 @@
+// Function to start the app and render the page
 function startApp(){
   getData();
   attachListeners();
 }
 
+//Function to get data from json files
 function getData(){
   const success = horns => {
+    console.log('success');
     displayPage(horns);
     addDropDownOptions(horns);
   };
   const failure = error => console.log(error);
 
+  //First json file
   $.get('data/page-1.json', 'json')
+    .then(success)
+    .catch(failure);
+
+  //Second json file
+  $.get('data/page-2.json', 'json')
     .then(success)
     .catch(failure);
 }
@@ -83,6 +92,24 @@ function attachListeners(){
       $('section').show();
     }
   });
+
+  $('nav li').on('click', event => {
+    const pageNum1 = $(event.target).attr('data-page');
+    showCurrentPage(pageNum1);
+    console.log('clicking');
+  });
+}
+
+function showCurrentPage(pageNum1){
+  $('.page').hide();
+
+  if(parseInt(pageNum1) === 1){
+    $('.page-1-stuff').show();
+    console.log('page1stuff');
+  } else {
+    $('.page-2-stuff').show();
+    console.log('page2stuff');
+  }
 }
 
 $(startApp);

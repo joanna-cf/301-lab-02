@@ -23,15 +23,21 @@
   <body>
     <header>
       <h1>The Gallery of Horns</h1>
-      <select id="optionsGoHere">
-        <option value="foreverOption">Choose Category Here</option>
-      </select>
       <nav>
         <ul>
-          <li data-page="1">Page 1</li>
+          <li data-page="1" class="checked">Page 1</li>
           <li data-page="2">Page 2</li>
         </ul>
       </nav>
+      <select id="optionsGoHere">
+        <option value="foreverOption">Choose Category Here</option>
+      </select>
+      <div id="sort">
+        <input type="radio" name="sort" id="hornAlphabet" value="alphabet" checked>
+        <label for="hornAlphabet">Sort Alphabetically</label>
+        <input type="radio" name="sort" id="hornNo" value="number">
+        <label for="hornNo">Sort by Horns</label>
+      </div>
     </header>
     <main class="mainSection">
       <article id="hornsGoHere">

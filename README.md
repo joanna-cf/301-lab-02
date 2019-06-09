@@ -67,9 +67,9 @@ Actual time needed to complete: 3 hours 15 minutes
 
 Number and name of feature: Lab 3 Feature 3 - Styling with Flexbox
 
-Estimate of time needed to complete: 
+Estimate of time needed to complete: 1 hour
 
-Start time: 
+Start time: 1:21pm
 
 Finish time: 
 
